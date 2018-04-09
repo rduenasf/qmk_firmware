@@ -7,3 +7,13 @@
 #define IGNORE_MOD_TAP_INTERRUPT
 #undef PERMISSIVE_HOLD
 #undef PREVENT_STUCK_MODIFIERS
+
+#ifdef TAPPING_TERM
+#undef TAPPING_TERM
+#endif
+#define TAPPING_TERM 250
+
+#ifdef DEBOUNCE
+#undef DEBOUNCE
+#endif
+#define DEBOUNCE 2
