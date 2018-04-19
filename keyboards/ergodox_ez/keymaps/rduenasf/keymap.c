@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESCAPE,      KC_1,         KC_2,        KC_3,        KC_4,      KC_5,   KC_6,
     KC_TAB,         KC_Q,         KC_W,        KC_E,        KC_R,      KC_T,   KC_TAB,
     ALL_T(KC_NO),   KC_A,         KC_S,        KC_D,        KC_F,      KC_G,
-    KC_LSPO,        KC_Z,         KC_X,        KC_C,        KC_V,      KC_B,   TG(L_SYMB),
+    KC_LSPO,        KC_Z,         KC_X,        KC_C,        KC_V,      KC_B,   KC_NO,
     MO(L_SYMB),     KC_LCTL,      KC_LALT,     KC_LEFT,     KC_RIGHT,
 
               RGUI(KC_C), RGUI(KC_V),
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESCAPE,      KC_1,         KC_2,        KC_3,        KC_4,      KC_5,   KC_6,
     KC_TAB,         KC_Q,         KC_W,        KC_E,        KC_R,      KC_T,   KC_TAB,
     ALL_T(KC_NO),   KC_A,         KC_S,        KC_D,        KC_F,      KC_G,
-    KC_LSPO,        KC_Z,         KC_X,        KC_C,        KC_V,      KC_B,   TG(L_SYMB),
+    KC_LSPO,        KC_Z,         KC_X,        KC_C,        KC_V,      KC_B,   KC_NO,
     MO(L_SYMB),     KC_LCTL,      KC_LALT,     KC_LEFT,     KC_RIGHT,
 
               LCTL(KC_C), LCTL(KC_V),
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRAVE,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,   _______,  _______,  _______,  _______,  _______,  _______,
     _______,   _______,  _______,  _______,  _______,  _______,
-    KC_LSHIFT, _______,  _______,  _______,  _______,  _______,  _______,
+    KC_LSHIFT, _______,  _______,  _______,  _______,  _______,  _______, // to prevent from going to L_SYMB accidentally
     KC_LCTL,   KC_LCTL,  KC_LALT,  KC_LALT,  KC_LALT,
 
               KC_NO,    KC_PSCREEN,
@@ -113,6 +113,7 @@ void matrix_init_user(void) {
     rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
   #endif
 #endif
+  // set led1 for default eeprom layer if necessary
   uint8_t default_layer = eeconfig_read_default_layer();
   if (default_layer & (1UL << L_WIN)) {
     ergodox_right_led_1_on();
@@ -133,6 +134,11 @@ uint32_t layer_state_set_user(uint32_t state) {
 
   uint8_t layer = biton32(state);
   uint8_t default_layer = eeconfig_read_default_layer();
+
+
+  // led1 indicates whether we're on osx or win default layouts
+  // led2 indicates symbols/media layer
+  // led3 indicates whether we're in gaming mode or not.
 
   if (default_layer & (1UL << L_WIN)) {
     ergodox_right_led_1_on();

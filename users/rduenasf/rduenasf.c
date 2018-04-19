@@ -8,12 +8,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case KC_L_OSX:
     if (record->event.pressed) {
+      // sets layer and persists it to the EEPROM as default layer
       set_single_persistent_default_layer(L_OSX);
     }
     return false;
     break;
   case KC_L_WIN:
     if (record->event.pressed) {
+      // sets layer and persists it to the EEPROM as default layer
       set_single_persistent_default_layer(L_WIN);
     }
     return false;
@@ -29,12 +31,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                    ":avrdude"
 #endif // bootloader options
                    SS_TAP(X_ENTER));
-    }
-    return false;
-    break;
-  case EPRM: // Resets EEPROM
-    if (record->event.pressed) {
-      eeconfig_init();
     }
     return false;
     break;

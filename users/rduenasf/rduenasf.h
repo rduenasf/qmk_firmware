@@ -15,12 +15,11 @@ enum userspace_layers {
 
 enum userspace_custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
-  EPRM, // reset eeprom
   VRSN, // type version
   RGB_SLD, // make rgb solid
   KC_MAKE, // type make
-  KC_L_WIN, // set windows as default layer
-  KC_L_OSX, // set mac as a default layer
+  KC_L_WIN, // set windows as default layer in EEPROM
+  KC_L_OSX, // set mac as a default layer in EEPROM
   NEW_SAFE_RANGE
 };
 
