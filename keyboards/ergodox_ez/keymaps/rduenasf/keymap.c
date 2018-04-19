@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     VRSN,      KC_AMPR,  KC_7,    KC_8,      KC_9,     KC_NONUS_BSLASH, KC_L_WIN,
                          KC_MPP,  KC_DOT,    KC_0,     KC_EQUAL,        _______,
 
-    RGB_M_B,  RGB_SLD,
+    RGB_M_B,  RGB_M_P,
     RGB_VAD,
     RGB_VAI,  RGB_HUD,  RGB_HUI
 ),
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRAVE,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,   _______,  _______,  _______,  _______,  _______,  _______,
     _______,   _______,  _______,  _______,  _______,  _______,
-    KC_LSHIFT, _______,  _______,  _______,  _______,  _______,  _______, // to prevent from going to L_SYMB accidentally
+    KC_LSHIFT, _______,  _______,  _______,  _______,  _______,  _______,
     KC_LCTL,   KC_LCTL,  KC_LALT,  KC_LALT,  KC_LALT,
 
               KC_NO,    KC_PSCREEN,
