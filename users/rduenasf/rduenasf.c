@@ -6,21 +6,21 @@
 // Then runs the _keymap's record handier if not processed here
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-  // case KC_OSX:
-  //   if (record->event.pressed) {
-  //     set_single_persistent_default_layer(_QWERTY);
-  //   }
-  //   return false;
-  //   break;
-  // case KC_WIN:
-  //   if (record->event.pressed) {
-  //     set_single_persistent_default_layer(_COLEMAK);
-  //   }
-  //   return false;
-  //   break;
+  case KC_L_OSX:
+    if (record->event.pressed) {
+      set_single_persistent_default_layer(L_OSX);
+    }
+    return false;
+    break;
+  case KC_L_WIN:
+    if (record->event.pressed) {
+      set_single_persistent_default_layer(L_WIN);
+    }
+    return false;
+    break;
   case KC_MAKE:  // Compiles the firmware, and adds the flash command based on keyboard bootloader
     if (!record->event.pressed) {
-      SEND_STRING("make " QMK_KEYBOARD ":" QMK_KEYMAP
+      SEND_STRING("make -j8 " QMK_KEYBOARD ":" QMK_KEYMAP
 #if  (defined(BOOTLOADER_DFU) || defined(BOOTLOADER_LUFA_DFU) || defined(BOOTLOADER_QMK_DFU))
                    ":dfu"
 #elif defined(BOOTLOADER_HALFKAY)

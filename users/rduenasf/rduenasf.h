@@ -3,20 +3,26 @@
 
 #include "quantum.h"
 
+
+#define KC_MPP KC_MEDIA_PLAY_PAUSE // rename media play pause for better layout
+
 enum userspace_layers {
-  OSX = 0, // default layer for mac
-  WIN, // default layer for windows
-  SYMB, // symbols and media layer
-  HOTS, // hots layer
+  L_OSX = 0, // default layer for mac
+  L_WIN, // default layer for windows
+  L_SYMB, // symbols and media layer
+  L_HOTS, // hots layer
 };
 
 enum userspace_custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
-  EPRM,
-  VRSN,
-  RGB_SLD,
-  KC_MAKE,
+  EPRM, // reset eeprom
+  VRSN, // type version
+  RGB_SLD, // make rgb solid
+  KC_MAKE, // type make
+  KC_L_WIN, // set windows as default layer
+  KC_L_OSX, // set mac as a default layer
   NEW_SAFE_RANGE
 };
+
 
 #endif
