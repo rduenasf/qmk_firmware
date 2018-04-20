@@ -17,13 +17,13 @@
 
 // term between a tap and a hold
 #ifdef TAPPING_TERM
-  #undef TAPPING_TERM
+#undef TAPPING_TERM
 #endif
 #define TAPPING_TERM 250
 
 // reduce debounce to improve responsiveness
 #ifdef DEBOUNCE
-  #undef DEBOUNCE
+#undef DEBOUNCE
 #endif
 #define DEBOUNCE 2
 
