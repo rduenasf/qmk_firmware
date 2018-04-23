@@ -82,13 +82,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_HOTS] = LAYOUT_ergodox(
     // left hand
     KC_GRAVE,  _______,  _______,  _______,  _______,  _______,  _______,
-    _______,   _______,  _______,  _______,  _______,  _______,  _______,
-    _______,   _______,  _______,  _______,  _______,  _______,
+    KC_TAB,    _______,  _______,  _______,  _______,  _______,  _______,
+    KC_F2,     _______,  _______,  _______,  _______,  _______,
     KC_LSHIFT, _______,  _______,  _______,  _______,  _______,  _______,
     KC_LCTL,   KC_LCTL,  KC_LALT,  KC_LALT,  KC_LALT,
 
-              KC_NO,    KC_PSCREEN,
-                        KC_ESCAPE,
+              KC_NO,    KC_ESCAPE,
+                        KC_PSCREEN,
     _______,  _______,  KC_NO,
 
     // right hand (skip entirely)

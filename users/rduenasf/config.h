@@ -5,7 +5,7 @@
   #define QMK_KEYS_PER_SCAN 4
 #endif // !QMK_KEYS_PER_SCAN
 
-#define FORCE_NKRO
+// #define FORCE_NKRO
 
 // this makes it possible to do rolling combos (zx) with keys that
 // convert to other keys on hold (z becomes ctrl when you hold it,
@@ -25,7 +25,7 @@
 #ifdef DEBOUNCE
 #undef DEBOUNCE
 #endif
-#define DEBOUNCE 2
+#define DEBOUNCE 3
 
 // Disable action_get_macro and fn_actions, since we don't use these
 // and it saves on space in the firmware.
