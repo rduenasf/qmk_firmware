@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RESET,     KC_F6,    KC_F7,   KC_F8,     KC_F9,    KC_F10,          KC_F11,
     KC_MAKE,   KC_UP,    KC_1,    KC_2,      KC_3,     KC_KP_ASTERISK,  KC_F12,
                KC_DOWN,  KC_4,    KC_5,      KC_6,     KC_KP_PLUS,      KC_L_OSX,
-    VRSN,      KC_AMPR,  KC_7,    KC_8,      KC_9,     KC_NONUS_BSLASH, KC_L_WIN,
+    VRSN,      KC_AMPR,  KC_7,    KC_8,      KC_9,     KC_BSLASH,       KC_L_WIN,
                          KC_MPP,  KC_DOT,    KC_0,     KC_EQUAL,        _______,
 
     RGB_M_B,  RGB_M_P,
