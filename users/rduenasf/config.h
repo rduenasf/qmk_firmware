@@ -25,7 +25,7 @@
 #ifdef DEBOUNCE
 #undef DEBOUNCE
 #endif
-#define DEBOUNCE 3
+#define DEBOUNCE 5
 
 // Disable action_get_macro and fn_actions, since we don't use these
 // and it saves on space in the firmware.
